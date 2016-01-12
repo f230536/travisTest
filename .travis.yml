@@ -5,6 +5,6 @@ python:
 install: "pip install -r requirements.txt"
 # command to run tests
 before_script:
-  - npm install chromedriver
+  - npm install -g chromedriver
 script: 
 - cd main && lettuce -v 3 features/simple.feature chrome desktop-m
