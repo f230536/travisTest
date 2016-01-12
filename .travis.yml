@@ -7,4 +7,4 @@ install: "pip install -r requirements.txt"
 before_script:
   - npm install -g phantomjs
 script: 
-- cd main && lettuce -v 3 features/simple.feature phantom desktop-m
+- cd main && lettuce -v 3 features/simple.feature chrome desktop-m

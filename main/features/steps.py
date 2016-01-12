@@ -240,6 +240,7 @@ def fireBrowserWithSize(step):
         world.browser = webdriver.Firefox()
     elif world.cli_params and world.cli_params == "phantom":
         world.browser = webdriver.PhantomJS()
+        time.sleep(5)
     else :
         # world.browser = webdriver.Safari('../standalone.jar')
         from pprint import pprint
@@ -255,7 +256,7 @@ def fireBrowserWithSize(step):
            desired_capabilities=safari_capabilities)
 
     world.browser.set_window_size(int(width), int(height))
-
+    world.browser.save_screenshot('screen.png')
 ## URLS
 @step(r'I set the window size to (\d+) by (\d+)?$')
 def visitURL(step, width, height):
