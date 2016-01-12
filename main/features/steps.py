@@ -238,6 +238,8 @@ def fireBrowserWithSize(step):
         world.browser = webdriver.Chrome()
     elif world.cli_params and world.cli_params == "firefox":
         world.browser = webdriver.Firefox()
+    elif world.cli_params and world.cli_params == "phantom":
+        world.browser = webdriver.PhantomJS()
     else :
         # world.browser = webdriver.Safari('../standalone.jar')
         from pprint import pprint

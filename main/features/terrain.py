@@ -19,7 +19,7 @@ def setup_browser():
     import sys, os
     browser_name = sys.argv[-2]
     window_size = sys.argv[-1]
-    browser_args = ['chrome', 'firefox','safari']
+    browser_args = ['chrome', 'firefox','safari','phantom']
     window_args = ['all','mobile-s', 'mobile-m', 'mobile-lg', 'mobile-xl', 'desktop-s', 'desktop-m', 'desktop-lg']
     if browser_name.lower() not in browser_args or window_size.lower() not in window_args or len(sys.argv) < 4:
         print "\n\n INVALID ARGS \n\n PLZ READ DOCS ASAP\n\n"
@@ -39,6 +39,8 @@ def setup_browser():
     world.window_params = window_size
     if browser_name.lower() == 'chrome':
         world.cli_params = 'chrome'
+    elif browser_name.lower() == 'phantom':
+        world.cli_params = 'phantom'
     elif browser_name.lower() == 'firefox':
         world.cli_params = 'firefox'
     else:
