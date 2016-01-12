@@ -1,0 +1,53 @@
+### TODO ### 
+- Figure out format to run tests
+
+Tools to use && setup
+1. Lettuce [Behavior driven development]
+2. Benchmarking
+3. Appium (android / ios)
+
+
+
+Make sure my library can (from the very beginning)
+1. For-loop through all browsers
+2. Reports that take screenshot && save all of them into a PDF report
+3. Window size 
+4. 
+
+## 
+1. Parallel python to run firefox, safari, ios, chrome
+
+
+public void testSuccessfulSubmission() {
+
+    driver.get(URL);
+
+    sendText("input[name=first-name]", "Ben");
+    sendText("input[name=last-name]", "Burton");
+    sendText("input[name=email]", "bburton@theladders.com");
+    sendText("input[name=email-confirm]",
+        "bburton@theladders.com");
+    sendText("input[type=password]", "test123");
+
+    driver.findElement(By.cssSelector("input[type=submit]"))
+      .click();
+
+    assertFalse(
+      driver.findElement(By.cssSelector("#error-message"))
+        .isDisplayed()
+    );
+}
+
+
+### Example 1 ### 
+
+Feature: Foosbook Signup
+Scenario: A complete signup
+should submit successfully
+  Given a user is on the
+  signup page 
+  When user enters complete
+  form data 
+  And user submits the form 
+  Then no error message
+  is displayed

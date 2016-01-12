@@ -1,0 +1,113 @@
+Feature: I should see a link containing
+    Scenario: Everything fires up
+        I visit "localhost:8100/#/university"
+        I set the window size to 800 by 400
+        I fill in the input with name "access-code-bar" with "cool" and press enter
+        I click the element with css selector "#school-list li a"
+        a list of "#courses-list li" are shown
+	    I fill in the input with name "course-input-1" with "CS170"
+        I click the element with css selector "#courses-list li a"
+        I click the element with css selector "[ng-click="nextSlide()"]"
+        I click the element with css selector "#skills-list li a"
+        I click the element with css selector "[ng-repeat="subcategory in active_category.subcategories"]"
+        I close subcatgory
+        I click the element with css selector "#category-skills [ng-click="nextSlide()"]"
+	    
+	    I upload a photo,
+	    I should see "Awesome! You're all set." message
+        I click the element with css selector "#account [ng-click="switchSignupMode()"]"
+	    I fill in the input with name "signup-name" with "Jason Huang"
+	    I fill in the input with name "email-input" with "jason@uguru.me"
+	    I fill in the input with name "password" with "test123"	
+        I click the element with css selector "#account [ng-click="completeSignup()"]"
+ 		##Edit profile
+        I click the element with css selector "[ng-click="showProfileModal()"]"
+        I click the element with css selector "#btn-edit-profile"
+        I upload a photo
+        I click the element with css selector "[ng-click="launchGuruCoursesModal()"]"
+        I click the element with css selector "[ng-click="addSelectedGuruCourse(course)"]"
+   		I click the element with css selector "[ng-click="guruCoursesModal.hide()"]"
+   		I fill in the input with name "experience-name-input" with "English Tutor"
+   		I fill in the input with name "experience-description-input" with "HHHHHHAAAA"
+   		I click the element with css selector "[ng-click="saveGuruExperience()"]"
+		I click the element with css selector "[ng-click="launchGuruSkillsModal()"]"
+		I click the element with css selector "[ng-click="saveGuruProfile()"]"
+		I click the element with css selector "[ng-click="profileModal.hide()"]"
+		##Credibiliy
+		I upload my transcript
+		I click the element with css selector "#credit-fb a"
+		I click the element with css selector "[ng-click="connectWithFacebook()"]"
+		I connect with my facebook account
+		I click the element with css selector "#credit-email a"
+		I click the element with css selector "#launch-email-confirm-popup"
+		I fill in the input with name "user-confirm-email-input" with "4085945188"
+		I click the element with css selector "#send-confirm-code"
+		I click the element with css selector "#credit-phone a"
+		I click the element with css selector "#launch-phone-confirm-popup"
+		I fill in the input with name "phone-number-input" with "jason@uguru.me"
+		I click the element with css selector "#confirm-email-save-popup-link"
+		I click the element with css selector "[ng-click="credibilityModal.hide()"]"
+		The percent of completed of "#cta-box-credibility h3 span" should be "100"%
+		##Referrals
+		I click the element with css selector "[ng-click="referralsModal.show()"]"
+		I see my refferal code
+		I click the element with css selector "[ng-click="referralsModal.hide()"]"
+		##Earn
+		I click the element with css selector "[ng-click="showBalanceModal()"]"
+		I click the element with css selector "[ng-click="balanceModal.hide()"]"
+		##Message
+		I click the element with css selector "[ng-click="messagesModal.show()"]"
+		I click the element with css selector "[ng-click="messagesModal.hide()"]"
+		#sidemenu
+		I click the element with css selector "[ng-click="toggleRightSideMenu()"]"
+		I click the element with css selector "[ng-click="openModalWithLoader('faq')"]"
+		elemet by css selector "#faq dl" is visibile
+		I click the element with css selector "[ng-click="closeModal('faq')"]"
+		I click the element with css selector "[ng-click="openModalWithLoader('privacy')"]"
+		elemet by css selector ".semibold.center.p30bottom" is visibile
+		I click the element with css selector "[ng-click="closeModal('privacy')"]"
+
+		I click the element with css selector "[ng-click="paymentsModal.show()"]"
+		I click the element with css selector "[ng-click="addCardModal.show()"]"
+		I fill in the input with name "card-number" with "4000056655665556"
+		I fill in the input with name "exp-date" with "09 / 2016"
+		I click the element with css selector "[ng-click="savePayment()"]"
+		elemet by css selector "[ng-repeat="card in user.transfer_cards"]" is visibile
+		I click the element with css selector "[ng-click="paymentsModal.hide()"]"
+
+		I click the element with css selector "[ng-click="openModalWithLoader('support')"]"
+		elemet by css selector ".intercom-active-admin img" is visibile
+		I click the element with css selector "[ng-click="closeModal('support')"]"
+
+		I click the element with css selector "[ng-click="notificationsModal.show()"]" 
+		I click the element with css selector "[ng-click="toggleEmailNotifications()"]" 
+		I click the element with css selector "[ng-click="toggleTextNotifications()"]" 
+		I click the element with css selector "[ng-click="saveNotifications()"]" 
+
+		I click the element with css selector "ng-click="showStudentEditActionSheet($event)"]"
+		I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "University"
+		I fill in the input with name "university-input" with "stanford"
+		I click the element with css selector "#school-list li a"
+
+		I click the element with css selector "ng-click="showStudentEditActionSheet($event)"]"
+		I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Account Information"
+		I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Edit Name"
+		I fill in the input with name "user-edit-name-input" with "Tony Huang"
+		I click the element with css selector "#edit-name-save-popup-link"
+
+		I click the element with css selector "ng-click="showStudentEditActionSheet($event)"]"
+		I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Account Information"
+		I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Edit Email"
+		I click the element with css selector "#edit-email-close-popup-link"
+
+		I click the element with css selector "ng-click="showStudentEditActionSheet($event)"]"
+		I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Account Information"
+		I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Edit Password"
+		I click the element with css selector "[ng-click="closeWelcomePopup()"]"
+		I click the element with css selector "[ng-click="logoutUser(true)]"
+		quit	
+    ## Missing --> Loader page in between with
+
+
+
+

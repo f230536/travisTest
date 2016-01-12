@@ -1,0 +1,159 @@
+Feature: I should see a link containing
+    Scenario: Everything fires up
+        I visit "localhost:8100/#/university"
+        I set the window size to 1600 by 1050
+        I fill in the input with name "desktop-access-code-bar" with "cool" and press enter
+        I click the element with css selector "[thr-click="universitySelected(university)"]"
+
+        I click the element with css selector "#cta-box-courses"
+        a list of "#courses-list li" are shown
+	    I fill in the input with name "course-input-1" with "CS170"
+        I click the element with css selector "#courses-list li a"
+        I click the element with css selector "#desktop-courses-save-button"
+
+        I click the element with css selector "#cta-box-categories"
+        I click the element with css selector "#skills-list li a"
+        I click the element with css selector "[ng-repeat="subcategory in active_category.subcategories"]"
+        I click the element with css selector "#desktop-skills-nested-save-button"
+        I click the element with css selector "#desktop-skills-save-button"
+        I click the element with css selector "#cta-box-photo"
+	    I upload a photo
+	    I should see "Awesome! You're all set." message
+
+        I click the element with css selector "ng-click="toggleLoginMode()"
+	    I fill in the input with name "signup-name" with "Jason Huang"
+	    I fill in the input with name "email-input" with "jason@uguru.me"
+	    I fill in the input with name "password" with "test123"	
+        I click the element with css selector "#account [ng-click="completeSignup()"]"
+   		elemet by css selector "[ng-controller="SignupController"]" is invisibile
+
+ 		##Edit profile
+        I click the element with css selector "#cta-box-profile"
+        I click the element with css selector "#btn-edit-profile"
+        I upload a photo
+        	##course
+        I click the element with css selector ".pf-checklist-add a"
+        I click the element with css selector "desktop-courses-save-button"
+    		##Shop
+    		##Experience
+		I click the element with css selector "[ng-click="activeTabIndex = 1;"]"    	
+        I click the element with css selector "cta-box-profile-experiences"
+   		I fill in the input with name "experience-name-input" with "English Tutor"
+   		I fill in the input with name "experience-description-input" with "HHHHHHAAAA"
+   		I click the element with css selector "#desktop-skills-save-button"
+   			##Will work for 
+   		I click the element with css selector ".pf-list.p15top a"
+
+			##skill
+		I click the element with css selector "[ng-click="launchGuruSkillsModal()"]"
+		I click the element with css selector "#desktop-skills-save-button"
+
+		I click the element with css selector "#cta-box-profile-languages"
+		I click the element with css selector "#language-list li a"
+		I click the element with css selector "[ng-click="saveLanguages()"]"
+
+		I click the element with css selector "[ng-click="toggleDesktopIntroduction()"]"
+		I fill in the input with name "desktop-guru-introduction-textarea" with "HI nice to meet you"
+		I click the element with css selector "[ng-click="toggleDesktopIntroduction()"]"
+		I click the element with css selector "[ng-click="saveGuruProfile()"]"
+
+		I click the element with css selector "#cta-box-profile-contact"
+		I click the element with css selector "#contact-type-list li input"
+		
+
+		I click the element with css selector "#guru-profile-cta-close"
+
+		##Credibiliy
+		I click the element with css selector "[ng-click="toggleDesktopTranscript()"]"
+		I upload my transcript
+			##Connect fb
+		I click the element with css selector "[ng-click="connectWithFacebook()"]"
+		I connect with my facebook account
+			##phone confirm
+		I click the element with css selector "[ng-click="confirmPhonePopup($event)"]"
+		I fill in the input with name "user-confirm-email-input" with "4085945188"
+		I click the element with css selector "#send-confirm-code"
+			##email confirm
+		I click the element with css selector "[ng-click="launchConfirmEmailPopup($event)"]"
+		I fill in the input with name "phone-number-input" with "jason@uguru.me"
+		I click the element with css selector "#confirm-email-save-popup-link"
+			## Check rank credibility
+		I click the element with css selector "[ng-click="credibilityModal.hide()"]"
+		The percent of completed of "#cta-box-credibility h3 span" should be "100"%
+
+		##Referrals
+		I click the element with css selector "#cta-box-referrals"
+		I see my refferal code
+		I click the element with css selector "#desktop-referrals .cta-modal-close.close-button.desktop-header-next"
+		##Earn
+		I click the element with css selector "#home-tiles-earnings"
+		I click the element with css selector "#cta-box-payments"
+		I fill in the input with name "card-number" with "4000056655665556"
+		I fill in the input with name "exp-date" with "09 / 2016"
+		I click the element with css selector "[ng-click="savePayment()"]"
+		elemet by css selector "[ng-repeat="card in user.transfer_cards"]" is visibile
+		I click the element with css selector "#desktop-balance .cta-modal-close.close-button.desktop-header-next"
+
+		##Message
+		I click the element with css selector "#cta-box-students"
+		I click the element with css selector "#desktop-messaging .cta-modal-close.close-button.desktop-header-next"
+
+		##billing 
+		I click the element with css selector "#cta-box-billing"
+		I click the element with css selector "#desktop-billing .cta-modal-close.close-button.desktop-header-next"
+
+		##sidemenu
+		I click the element with css selector "#top-settings"
+
+		##Setting 
+		I click the element with css selector "[ng-click="goToDesktopSettings()"]"
+	    I upload a photo
+	    I click the element with css selector "[ng-click="launchEditStudentNamePopup($event)"]"
+	    I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Edit Name"
+	    I fill in the input with name "user-edit-name-input" with "Tony Huang"
+	    I click the element with css selector "#edit-name-save-popup-link"
+	    
+	    I click the element with css selector "[ng-click="launchEditEmailPopup($event)"]"
+	    I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Edit Email"
+	    I click the element with css selector "#edit-email-close-popup-link"
+
+	    I click the element with css selector "[ng-click="launchEditPasswordPopup($event)"]"
+	    I click the element with css selector "[ng-click="buttonClicked($index)"]" contain text "Edit Password"
+	    I click the element with css selector "[ng-click="closeWelcomePopup()"]"
+
+	    I click the element with css selector "[ng-click="toggleEmailNotifications()"]" 
+	    I click the element with css selector "[ng-click="toggleTextNotifications()"]" 
+
+	    I click the element with css selector "openModal("university")"
+	    I fill in the input with name "university-input" with "stanford"
+	    I click the element with css selector "#school-list li a"
+
+	    I click the element with css selector "[ng-click="saveSettings()"]"
+	    I click the element with css selector ".settings-save [href="#/guru-home"]"
+
+
+		##FAQ
+		I click the element with css selector "#top-settings"
+		I click the element with css selector "[ng-click="openModalWithLoader('faq')"]"
+		elemet by css selector "#faq dl" is visibile
+		I click the element with css selector "[ng-click="closeModal('faq')"]"
+
+		##Term
+		I click the element with css selector "#top-settings"
+		I click the element with css selector "[ng-click="openModal('privacy')"]"
+		elemet by css selector ".semibold.center.p30bottom" is visibile
+		I click the element with css selector "[ng-click="closeModal('privacy')"]"
+
+		##Support
+		I click the element with css selector "#cta-box-content"
+		elemet by css selector "#general-top" is visibile
+		I click the element with css selector "#desktop-general .cta-modal-close.close-button.desktop-header-next"
+
+		##logout
+		I click the element with css selector "#top-settings"
+		I click the element with css selector "[ng-click="logoutUser()"]"
+		quit	
+
+
+
+
