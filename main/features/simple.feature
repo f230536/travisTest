@@ -1,10 +1,10 @@
-Feature: university home page - university Specific test : Berkeley
+Feature: Simple try
 	Scenario: Init websie
 		I start the args browser with args size
 		# I visit "localhost:8100/#/university/2307"
 		I visit "https://uguru.me/static/remote/index.html?version=1.081235#/university/2307"
 	Scenario Outline: Scroll button [0-4]
-	    I check element "<scrollTo>" contain text "<result>"
+	    # I check element "<scrollTo>" contain text "<result>"
 	    I click the element with css selector "<scrollTo>"
 	        And wait 1 seconds
 	    I check element "<checkmarks>" position is at 0,0
