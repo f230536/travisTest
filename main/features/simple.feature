@@ -9,8 +9,8 @@ Feature: Simple try
 	        And wait 1 seconds
 	    I check element "<checkmarks>" position is at 0,0
 	       Examples:
-	         | scrollTo 				 | checkmarks         | result      |
-	         | [name= 'how-scroll']      | #how-it-works      | How It Works|
-	         | [name= 'splash-scroll']   | #live-map    	  | Live 		|
-	         | [name= 'live-scroll']     | #splash-browse     | Browse 	    |
-	         | [name= 'become-scroll']   | #become-guru       | Apply Guru  |	
+	         | scrollTo 										  | checkmarks         | result      |
+	         | [ng-click='scrollToSection("#how-it-works")']      | #how-it-works      | How It Works|
+	         | [ng-click='scrollToSection("#live-map")']    	  | #live-map    	   | Live 		 |
+	         | [ng-click='scrollToSection("#browse-categories")'] | #splash-browse     | Browse 	 |
+	         | [ng-click='scrollToSection("#become-guru")']      | #become-guru       | Apply Guru  |	
