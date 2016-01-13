@@ -5,7 +5,6 @@ python:
 os:
   - linux
   - osx
-
 sudo: required
 install: 
 - "pip install -r requirements.txt"
@@ -13,7 +12,6 @@ install:
 # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./scripts/init_mac.sh          ; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh; fi
 # - npm install -g phantomjs
-- npm install -g chromedriver
 before_script:
 - "export DISPLAY=:99.0"
 - sh -e /etc/init.d/xvfb start
