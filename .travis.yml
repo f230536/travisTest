@@ -18,4 +18,4 @@ before_script:
 - cd main
 script: 
 - lettuce -v 3 features/simple.feature firefox desktop-m
-# - lettuce -v 3 features/simple.feature chrome desktop-m
+- lettuce -v 3 features/simple.feature chrome desktop-m
