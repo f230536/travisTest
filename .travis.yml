@@ -3,8 +3,8 @@ python:
   - "2.7"
 # command to install dependencies
 os:
-  - linux
-  # - osx
+  # - linux
+  - osx
 sudo: required
 # before_install:
 # - chmod a+x init_mac.sh
