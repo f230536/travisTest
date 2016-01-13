@@ -2,9 +2,8 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-install: 
 sudo: required
-
+install: 
 - "pip install -r requirements.txt"
 # command to run tests
 - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
