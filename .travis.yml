@@ -14,8 +14,8 @@ install:
 # - "pip install -r requirements.txt"
 #this is mac
 - curl -O http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz
-- alias osascript /usr/bin/osascript
-- osacript /scripts/install_safridrive.scpt
+# - alias osascript /usr/bin/osascript
+- osascript /scripts/install_safridrive.scpt
 
 ##End mac
 # - chmod 777 ./scripts/init_linux.sh
