@@ -10,7 +10,7 @@ sudo: required
 install: 
 - "pip install -r requirements.txt"
 # command to run tests
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/initlinux.sh          ; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh          ; fi
 # - npm install -g phantomjs
 - npm install -g chromedriver
 before_script:
