@@ -1,6 +1,6 @@
-language: python
-python:
-  - "2.7"
+language: c
+# python:
+#   - "2.7"
 # command to install dependencies
 os:
   # - linux
@@ -9,9 +9,9 @@ sudo: required
 # before_install:
 # - chmod a+x init_mac.sh
 install: 
-- brew install pyenv
-- pyenv install 2.7.5
-- "pip install -r requirements.txt"
+# - brew install pyenv
+# - pyenv install 2.7.5
+# - "pip install -r requirements.txt"
 #this is mac
 - curl -O http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz
 - osacript /scripts/install_safridrive.scpt
