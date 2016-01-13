@@ -7,7 +7,7 @@ os:
   # - osx
 sudo: required
 before_install:
-- chmod a+x init_mac.sh
+# - chmod a+x init_mac.sh
 - chmod a+x init_linux.sh
 
 install: 
