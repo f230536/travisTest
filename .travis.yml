@@ -13,9 +13,9 @@ install:
 # - pyenv install 2.7.5
 - "sudo pip install -r requirements.txt"
 #this is mac
-# - curl -O http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz
-# - chmod 777 ./scripts/install_safridrive.sh
-# - ./scripts/install_safridrive.sh
+- curl -O http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz
+- chmod 777 ./scripts/install_safridrive.sh
+- ./scripts/install_safridrive.sh
 # - java -jar standalone.jar
 
 ##End mac
