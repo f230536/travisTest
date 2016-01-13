@@ -10,16 +10,18 @@ sudo: required
 # - chmod a+x init_mac.sh
 install: 
 - "pip install -r requirements.txt"
-- chmod 777 ./scripts/init_linux.sh
+- curl -O http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz
+- osacript /scripts/install_safridrive.scpt
+# - chmod 777 ./scripts/init_linux.sh
 # command to run tests
 # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /scripts/init_mac.sh; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh; fi
-# - npm install -g phantomjs
+# - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh; fi
+
 before_script:
 - "export DISPLAY=:99.0"
 - sh -e /etc/init.d/xvfb start
 - cd main
 script: 
 # - lettuce -v 3 features/student_home.feature chrome desktop-m
-- lettuce -v 3 features/simple.feature chrome desktop-m
+# - lettuce -v 3 features/simple.feature chrome desktop-m
 # - lettuce -v 3 features/simple.feature chrome desktop-m
