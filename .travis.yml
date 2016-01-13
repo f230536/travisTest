@@ -2,11 +2,19 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-install: "pip install -r requirements.txt"
+install: 
+sudo: required
+
+- "pip install -r requirements.txt"
 # command to run tests
-before_script:
-  - npm install -g phantomjs
-  - npm install -g chromedriver
+- wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+- sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+- sudo apt-get update -qq
+- sudo apt-get install -qq google-chrome-stable
+- npm install -g phantomjs
+- npm install -g chromedriver
+# before_script:
+
 
 script: 
 - cd main && lettuce -v 3 features/simple.feature chrome desktop-m
