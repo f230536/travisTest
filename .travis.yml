@@ -26,9 +26,9 @@ install:
 - ./scripts/init_linux.sh
 before_script:
 - "export DISPLAY=:99.0"
-- sh -e /etc/init.d/xvfb start
+# - sh -e /etc/init.d/xvfb start
 - cd main
 script: 
 # - lettuce -v 3 features/student_home.feature chrome desktop-m
-# - lettuce -v 3 features/simple.feature chrome desktop-m
+- lettuce -v 3 features/simple.feature chrome desktop-m
 # - lettuce -v 3 features/simple.feature chrome desktop-m
