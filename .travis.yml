@@ -23,9 +23,9 @@ install:
 # command to run tests
 # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /scripts/init_mac.sh; fi
 # - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh; fi
-- ./scripts/init_linux.sh
+# - ./scripts/init_linux.sh
 before_script:
-- "export DISPLAY=:99.0"
+# - "export DISPLAY=:99.0"
 # - sh -e /etc/init.d/xvfb start
 - cd main
 script: 
