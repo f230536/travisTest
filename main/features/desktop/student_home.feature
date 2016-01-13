@@ -1,7 +1,9 @@
 Feature: Student home page is testing all the button is working
    Scenario: access code page
         I start the args browser with args size
-        I visit "http://localhost:8100/#/university"
+        # I visit "http://localhost:8100/#/university"
+        I visit "https://uguru.me/static/remote/index.html?version=1.081235#/university"
+
         I click the element with css selector "[ng-click="goToLoginFromAccess()"]"
           And wait 1 seconds
 
