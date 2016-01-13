@@ -6,12 +6,11 @@ os:
   - linux
   # - osx
 sudo: required
-before_install:
+# before_install:
 # - chmod a+x init_mac.sh
-- chmod a+x /scripts/init_linux.sh
-
 install: 
 - "pip install -r requirements.txt"
+- chmod 777 ./scripts/init_linux.sh
 # command to run tests
 # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /scripts/init_mac.sh; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh; fi
