@@ -252,7 +252,7 @@ def fireBrowserWithSize(step):
         # # Available values for most loggers are "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL".
         # # This produces a JSON object looking something like: {"loggingPrefs": {"driver": "INFO", "server": "OFF", "browser": "FINE"}}.
         # world.browser = webdriver.Remote(
-        #    command_executor='http://127.0.0.1:4444/wd/hub',
+        #    command_executor='http://192.168.42.72:4444/wd/hub',
         #    desired_capabilities=safari_capabilities)
 
     world.browser.set_window_size(int(width), int(height))

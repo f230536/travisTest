@@ -2,7 +2,7 @@ Feature: Simple try
 	Scenario: Init websie
 		I start the args browser with args size
 		# I visit "localhost:8100/#/university/2307"
-		I visit "https://uguru.me"
+		I visit "yahoo.com"
 	Scenario Outline: Scroll button [0-4]
 	    # I check element "<scrollTo>" contain text "<result>"
 	    I click the element with css selector "<scrollTo>"
