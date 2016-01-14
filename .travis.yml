@@ -33,6 +33,6 @@ script:
 # - lettuce -v 3 features/simple.feature chrome desktop-m
 
 ##Freifox && Chrome 
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lettuce -v 3  ./scripts/run_test_chrome_firefox.sh; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/run_test_chrome_firefox.sh; fi
 ##Safari
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lettuce -v 3 ./scripts/run_test_safari.sh; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./scripts/run_test_safari.sh; fi
