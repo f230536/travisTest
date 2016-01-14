@@ -18,10 +18,12 @@ install:
 ##End mac
 - chmod 777 ./scripts/init_linux.sh
 # command to run tests
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./scripts/install_safridrive.sh fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./scripts/install_safridrive.sh; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh; fi
 # - ./scripts/init_linux.sh
 before_script:
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
 # - "export DISPLAY=:99.0"
 # - sh -e /etc/init.d/xvfb start
 - cd main
@@ -29,5 +31,5 @@ script:
 # - lettuce -v 3 features/student_home.feature chrome desktop-m
 - lettuce -v 3 features/simple.feature safari desktop-m
 # - lettuce -v 3 features/simple.feature chrome desktop-m
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lettuce -v 3 features/simple.feature safari desktop-m fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lettuce -v 3 features/simple.feature chrome desktop-m fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lettuce -v 3 features/simple.feature safari desktop-m; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lettuce -v 3 features/simple.feature chrome desktop-m; fi
