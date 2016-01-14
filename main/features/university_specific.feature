@@ -2,18 +2,34 @@ Feature: university home page - university Specific test : Berkeley
 	Scenario: Init websie
 		I start the args browser with args size
 		# I visit "localhost:8100/#/university/2307"
-		I visit "http://localhost:5000/static/remote/index.html#/university/2307"
+		#I visit "http://localhost:5000/static/remote/index.html#/university/2307"
+		I visit "https://uguru.me/static/remote/index.html#/university/2307"
+
 	Scenario Outline: Scroll button [0-4]
 	    I check element "<scrollTo>" contain text "<result>"
 	    I click the element with css selector "<scrollTo>"
 	        And wait 1 seconds
 	    I check element "<checkmarks>" position is at 0,0
+	    I verify element "<checkmarks> header h1" exist
+
 	       Examples:
-	         | scrollTo 				 | checkmarks         | result      |
-	         | [name= 'how-scroll']      | #how-it-works      | How It Works|
-	         | [name= 'splash-scroll']   | #live-map    	  | Live 		|
-	         | [name= 'live-scroll']     | #splash-browse     | Browse 	    |
-	         | [name= 'become-scroll']   | #become-guru       | Apply Guru  |	
+	       | scrollTo 										    | checkmarks         | result      |
+	       | [ng-click='scrollToSection("#how-it-works")']      | #how-it-works      | How It Works|
+	      # | [ng-click='scrollToSection("#live-map")']    	    | #live-map    	     | Live 	   |
+	       | [ng-click='scrollToSection("#browse-categories")'] | #splash-browse     | Browse 	   |
+	       | [ng-click='scrollToSection("#become-guru")']       | #become-guru       | Apply Guru  |	
+
+
+	       # | scrollTo 				 | checkmarks         | result      |
+	       # | [name= 'how-scroll']      | #how-it-works      | How It Works|
+	       # | [name= 'splash-scroll']   | #live-map    	  | Live 		|
+	       # | [name= 'live-scroll']     | #splash-browse     | Browse 	    |
+	       # | [name= 'become-scroll']   | #become-guru       | Apply Guru  |	
+    Scenario: make sure all link sidebar work
+    	
+
+
+
 
 	Scenario: element in how it work 
 	    I click the element with css selector "[ng-click='scrollToSection("#how-it-works")']"

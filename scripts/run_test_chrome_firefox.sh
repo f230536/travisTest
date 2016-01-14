@@ -1,4 +1,5 @@
 #!/bin/bash
+cd main
 # For chrome
 lettuce -v 3 features/simple.feature chrome desktop-s
 lettuce -v 3 features/simple.feature chrome desktop-m

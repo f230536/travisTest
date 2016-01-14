@@ -59,7 +59,7 @@ def wait_for_elem(browser, xpath):
 def wait_for_content(browser, content):
     return contains_content(browser, content)
 
-http://192.168.42.70:8100/#/desktop-login
+#http://192.168.42.70:8100/#/desktop-login
 ## URLS
 @step('I visit "(.*?)"$')
 def visit(step, url):
