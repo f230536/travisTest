@@ -25,7 +25,7 @@ Feature: university home page - university Specific test : Berkeley
 	       # | [name= 'splash-scroll']   | #live-map    	  | Live 		|
 	       # | [name= 'live-scroll']     | #splash-browse     | Browse 	    |
 	       # | [name= 'become-scroll']   | #become-guru       | Apply Guru  |	
-    Scenario: make sure all link sidebar work
+    # Scenario: make sure all link sidebar work
     	
 
 
