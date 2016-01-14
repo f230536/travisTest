@@ -242,7 +242,7 @@ def fireBrowserWithSize(step):
         world.browser = webdriver.PhantomJS()
         time.sleep(5)
     else :
-        world.browser = webdriver.Safari('../standalone.jar','-log check')
+        world.browser = webdriver.Safari('../standalone.jar')
         # from pprint import pprint
         # # pprint(world.browser.options.__dict__)
         # from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
