@@ -3,7 +3,7 @@ language: c
 #   - "2.7"
 # command to install dependencies
 os:
-  # - linux
+  - linux
   - osx
 sudo: required
 # before_install:
@@ -29,7 +29,7 @@ before_script:
 - cd main
 script: 
 # - lettuce -v 3 features/student_home.feature chrome desktop-m
-- lettuce -v 3 features/simple.feature safari desktop-m
+# - lettuce -v 3 features/simple.feature safari desktop-m
 # - lettuce -v 3 features/simple.feature chrome desktop-m
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lettuce -v 3 features/simple.feature safari desktop-m; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lettuce -v 3 features/simple.feature chrome desktop-m; fi
