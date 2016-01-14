@@ -13,18 +13,13 @@ install:
 # - pyenv install 2.7.5
 - "sudo pip install -r requirements.txt"
 #this is mac
-# - curl -O http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz
 - chmod 777 ./scripts/install_safridrive.sh
-- ./scripts/install_safridrive.sh
-- sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain AddTrust_External_CA_Root.cer
-
-# - java -jar standalone.jar
-
+# - ./scripts/install_safridrive.sh
 ##End mac
-# - chmod 777 ./scripts/init_linux.sh
+- chmod 777 ./scripts/init_linux.sh
 # command to run tests
-# - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /scripts/init_mac.sh; fi
-# - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./scripts/install_safridrive.sh fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh fi
 # - ./scripts/init_linux.sh
 before_script:
 # - "export DISPLAY=:99.0"
@@ -34,3 +29,5 @@ script:
 # - lettuce -v 3 features/student_home.feature chrome desktop-m
 - lettuce -v 3 features/simple.feature safari desktop-m
 # - lettuce -v 3 features/simple.feature chrome desktop-m
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lettuce -v 3 features/simple.feature safari desktop-m fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lettuce -v 3 features/simple.feature chrome desktop-m fi
