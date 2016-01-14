@@ -12,11 +12,12 @@ install:
 # - brew install pyenv
 # - pyenv install 2.7.5
 - "sudo pip install -r requirements.txt"
-#this is mac
+# init sh file
 - chmod 777 ./scripts/install_safridrive.sh
-# - ./scripts/install_safridrive.sh
-##End mac
 - chmod 777 ./scripts/init_linux.sh
+- chmod 777 ./scripts/run_test_safari.sh
+- chmod 777 ./scripts/run_test_chrome_firefox.sh
+
 # command to run tests
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./scripts/install_safridrive.sh; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/init_linux.sh; fi
@@ -31,5 +32,8 @@ script:
 # - lettuce -v 3 features/student_home.feature chrome desktop-m
 # - lettuce -v 3 features/simple.feature safari desktop-m
 # - lettuce -v 3 features/simple.feature chrome desktop-m
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lettuce -v 3 features/simple.feature safari desktop-m; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lettuce -v 3 features/simple.feature chrome desktop-m; fi
+
+##Freifox && Chrome 
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lettuce -v 3  ./scripts/run_test_chrome_firefox.sh; fi
+##Safari
+# - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lettuce -v 3 ./scripts/run_test_safari.sh; fi
