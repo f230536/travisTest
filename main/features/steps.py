@@ -242,18 +242,18 @@ def fireBrowserWithSize(step):
         world.browser = webdriver.PhantomJS()
         time.sleep(5)
     else :
-        world.browser = webdriver.Safari('../standalone.jar')
-        # from pprint import pprint
-        # # pprint(world.browser.options.__dict__)
-        # from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-        # safari_capabilities = DesiredCapabilities.SAFARI
-        # # safari_capabilities['loggingPrefs'] = {'browser': 'OFF', 'server': 'OFF', 'driver': "OFF"}
-        # # FOR MORE DETAILS VISIT https://code.google.com/p/selenium/wiki/DesiredCapabilities
-        # # Available values for most loggers are "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL".
-        # # This produces a JSON object looking something like: {"loggingPrefs": {"driver": "INFO", "server": "OFF", "browser": "FINE"}}.
-        # world.browser = webdriver.Remote(
-        #    command_executor='http://192.168.42.72:4444/wd/hub',
-        #    desired_capabilities=safari_capabilities)
+        # world.browser = webdriver.Safari('../standalone.jar')
+        from pprint import pprint
+        # pprint(world.browser.options.__dict__)
+        from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+        safari_capabilities = DesiredCapabilities.SAFARI
+        # safari_capabilities['loggingPrefs'] = {'browser': 'OFF', 'server': 'OFF', 'driver': "OFF"}
+        # FOR MORE DETAILS VISIT https://code.google.com/p/selenium/wiki/DesiredCapabilities
+        # Available values for most loggers are "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL".
+        # This produces a JSON object looking something like: {"loggingPrefs": {"driver": "INFO", "server": "OFF", "browser": "FINE"}}.
+        world.browser = webdriver.Remote(
+           command_executor='http://192.168.42.72:4444/wd/hub',
+           desired_capabilities=safari_capabilities)
 
     world.browser.set_window_size(int(width), int(height))
     # world.browser.save_screenshot('screen.png')
